@@ -11,15 +11,12 @@ from flask_login import LoginManager, UserMixin, login_user, login_required, log
 from PIL import Image
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import relationship
+from app import app
 
 db = SQLAlchemy()
 
-#from models import db, Producto   # Importa db y Producto desde models.py
-
-# Esto busca los templates en la carpeta CRUD pero usa el static que esta fuera
-#app = Flask(__name__, template_folder='templates/crud', static_folder='../static')
-#app = Flask(__name__, static_folder='../static')
 app = Flask(__name__)
+
 #######################################################################################
 app.config['SESSION_PERMANENT'] = True  # True, La sesion dura lo indicado. False, hasta que cierro el navegador
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=10)  # Ajusta el tiempo de vida
@@ -36,10 +33,15 @@ app.config['MAX_IMAGE_SIZE'] = (800, 800)
 
 # Configuración de la base de datos
 db_config = {
-    'user': 'root',         
-    'password': '',
-    'host': 'localhost',          
-    'database': 'ventas'
+    #'user': 'root',         
+    #'password': '',
+    #'host': 'localhost',          
+    #'database': 'ventas'
+
+    'user': 'sql_angelo_user',         
+    'password': '9FLKbE4MReFGKYRt9UCbsq2XIJuyk4BM',
+    'host': 'dpg-csuadthu0jms738mhhd0-a',          
+    'database': 'sql_angelo'
 }
 
 class Producto(db.Model):
