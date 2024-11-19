@@ -41,7 +41,7 @@ db_config = {
     'user': 'sql_angelo_user',         
     'password': '9FLKbE4MReFGKYRt9UCbsq2XIJuyk4BM',
     'host': 'dpg-csuadthu0jms738mhhd0-a',          
-    'database': 'sql_angelo'
+    'database': 'ventas'
 }
 
 class Producto(db.Model):
