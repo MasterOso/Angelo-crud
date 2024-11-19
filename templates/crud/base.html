@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+    <title>{% block title %}Mi Aplicación{% endblock %}</title>
+</head>
+<body>
+    {% if current_user.is_authenticated %}
+        <nav>
+            <a href="{{ url_for('index') }}">Inicio</a>
+            <a href="{{ url_for('logout') }}">Cerrar Sesión</a>
+        </nav>
+        {% block content %}{% endblock %}
+    {% else %}
+        <p>Debes <a href="{{ url_for('login') }}">iniciar sesión</a> para acceder a esta página.</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+    <title>Registrar</title>
+</head>
+<body>
+    <h1>Registrar</h1>
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username() }}
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password() }}
+        </p>
+        <p>
+            {{ form.confirm_password.label }}<br>
+            {{ form.confirm_password() }}
+        </p>
+        <p><button type="submit">Registrar</button></p>
+    </form>
+    <a href="{{ url_for('login') }}">Ya tienes una cuenta? Inicia Sesión</a>
+</body>
+</html>

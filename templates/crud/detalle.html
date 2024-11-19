@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">    -->
+
+    <title>Detalles del Producto</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>{{ producto.producto }}</h1>
+        <img src="{{ producto.imagen }}" class="img-fluid" alt="{{ producto.producto }}">
+        <p><strong>Precio 1:</strong> ${{ producto.precio1 }}</p>
+        <p><strong>Precio 2:</strong> ${{ producto.precio2 }}</p>
+        <p><strong>Detalle:</strong> {{ producto.detalle }}</p>
+        <p><strong>Stock:</strong> {{ producto.stock }}</p>
+        <p><strong>Categoría:</strong> {{ producto.categoria }}</p>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">Volver al Carrusel</a>
+    </div>
+</body>
+</html>

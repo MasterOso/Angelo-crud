@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/crud/categ/create_c.css">
+    <title>Crear Producto</title>
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+</head>
+
+<body>
+    <h1 class="Titulo1">NUEVA CATEGORIA</h1>
+    
+    <!--   Esto va para habilitar el mensaje de error de clave duplicada -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <div class="alert-container">
+            {% for category, message in messages %}
+            <div class="alert alert-{{ category }}" role="alert">
+                {{ message|safe }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    {% endwith %}
+  
+
+    <div class="caja" id="formcrear">
+     
+        <form method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <br>
+            <div class="campo-1">
+                <label for="cat">Categoría:</label>
+                {{ form.cat(class_="c1") }}
+            </div>
+            <div class="campo-2">
+                <label for="nombre">Nombre:</label>
+                {{ form.nomcat(class_="c2") }}
+            </div>
+            <div class="campo-3">
+                <label for="supercat">Linea Sup.:</label>
+                {{ form.supercat(class_="c3") }}
+            </div>
+            <div class="campo-4">
+                <label for="superest">Estilo:</label>
+                {{ form.superest(class_="c4") }}
+            </div>
+            <div class="campo-5">
+                <label for="subcat">Sub Linea:</label>
+                {{ form.subcat(class_="c5") }}
+            </div>
+            <div class="campo-6">
+                <label for="subest">Estilo:</label>
+                {{ form.subest(class_="c6") }}
+            </div>
+            
+            <br><br><br>
+            <div class="botones">
+                <a class="boton-C" href="{{ url_for('categorias') }}">Cancelar</a>
+                <button class="boton-G" type="submit" name="save">Guardar</button>
+            </div>
+            
+        </form>
+    </div>
+</body>
+</html>

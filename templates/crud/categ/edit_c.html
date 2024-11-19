@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/crud/categ/edit_c.css">
+    <title>Editar Producto</title>
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+</head>
+
+<body>
+    <h1 class="Titulo1">Editar Categoría</h1>
+    
+    <div class="caja" id="formcrear">
+
+        <form method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}     
+            <br>
+            <div class="campo-1">
+                <label for="cat">Categoría:</label>
+                {{ form.cat(value=categoria.cat, class_="c1", readonly=True) }}
+            </div>
+            <div class="campo-2">
+                <label for="nomcat">Nombre:</label>
+                {{ form.nomcat(value=categoria.nomcat, class_="c2") }}
+            </div>
+            <div class="campo-3">
+                <label for="supercat">Linea Sup.:</label>
+                {{ form.supercat(value=categoria.supercat, class_="c3") }}
+            </div>
+            <div class="campo-4">
+                <label for="superest">Estilo:</label>
+                {{ form.superest(value=categoria.superest, class_="c4") }}
+            </div>
+            <div class="campo-5">
+                <label for="subcat">Linea Inf.:</label>
+                {{ form.subcat(value=categoria.subcat, class_="c5") }}
+            </div>
+            <div class="campo-6">
+                <label for="subest">Estilo:</label>
+                {{ form.subest(value=categoria.subest, class_="c6") }}
+            </div>
+
+            <br><br><br>
+            <div class="botones">
+                <a class="boton-C" href="{{ url_for('categorias') }}">Cancelar</a>
+                <button class="boton-G" type="submit" name="save">Guardar</button>
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>

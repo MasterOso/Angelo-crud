@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+    <title>MANTENIMIENTO DE SISTEMA</title>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/crud/menu.css">
+
+</head>
+
+<body>
+    <br><br>
+    <h3 class="titulo">MANTENIMIENTO DE SISTEMA</h3>
+    <div class="menu1">
+        {% if current_user.is_authenticated %}
+            <a href="{{ url_for('index') }}"><button class="opcion1">Stock</button></a>
+            <a href="{{ url_for('categorias') }}"><button class="opcion1">Categorias</button></a>
+            <a href="{{ url_for('change_password') }}"><button class="opcion1">Contraseña</button></a>
+            <a href="{{ url_for('logout') }}"><button class="opcion1">Cerrar Sesión</button></a>
+            {% block content %}{% endblock %}
+        {% else %}
+            <p>Debes <a href="{{ url_for('login') }}">iniciar sesión</a> para acceder a esta página.</p>
+        {% endif %}
+    </div>
+
+</body>
+</html>

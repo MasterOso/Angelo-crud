@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Productos</title>
+    <link rel="stylesheet" href="/static/css/crud/index.css">
+	
+	<link rel="shortcut icon" href="static/images/Nivel-1/marca.jpeg">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+</head>
+<body>
+    <div style="text-align:center;">
+        <table class="TTT">
+            <td  class="titulo1">MANTENIMIENTO DE STOCK</td>
+<!--            <td style="width: 40px; text-align: left;"><img src="static/images/Nivel-1/marca-6.jpg" style="max-width: 130px;"></td> -->
+        </table>
+    </div>
+    
+    <form class="form-B" Align="center" method="post" action="{{ url_for('index') }}">
+        <div class="b123">
+            <input class="B1" type="text" name="search" placeholder="PRODUCTO" value="{{ request.args.get('search', '') }}">
+            <input class="B2" type="text" name="code" placeholder="CÓDIGO" value="{{ request.args.get('code', '') }}">
+            
+            <select name="cat" class="B3">
+                <option value="">Todas las Categorías</option>
+                {% for categoria in categorias %}
+                    <option value="{{ categoria[0] }}" {% if request.form.get('cat') == categoria[0]|string %}selected{% endif %}>
+                        {{ categoria[1] }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="_bB">
+            <button class="bB" type="submit">BUSCAR</button>
+        </div>
+    </form>
+    <br>
+	<div class=tablescroll>
+        <table class="tabla2">
+            <thead class="div0">
+                <tr class="titu"><th colspan="9"><h>S  T  O  C  K</h><th colspan="2" rowspan="2" ><a class="boton_A" href="{{ url_for('create') }}";>AGREGAR</a></th></tr>
+                <tr class="stitu">
+                    <th class="t01">
+                        <a href="{{ url_for('productos', sort_by='codigo', order='asc' if request.args.get('order') == 'desc' else 'desc') }}" class="t01a">CODIGO</a>
+                    </th>
+                    <th class="t02">
+                        <a href="{{ url_for('productos', sort_by='producto', order='asc' if request.args.get('order') == 'desc' else 'desc') }}" class="t01a">PRODUCTO</a>
+                    </th>
+                    <th class="t03">
+                        <a href="{{ url_for('productos', sort_by='detalle', order='asc' if request.args.get('order') == 'desc' else 'desc') }}" class="t01a">D      E      T      A      L      L      E</a>
+                    </th>
+                    <th class="t04">Imagen</th>
+<!--                <th class="t05">Img.1</th>
+                    <th class="t06">Img.2</th>
+                    <th class="t07">Img.3</th>  -->
+                    <th class="t08">Categ.</th>
+                    <th class="t09">Costo</th>
+                    <th class="t10">Precio 1</th>
+                    <th class="t11">Precio 2</th>
+                    <th class="t12">Stock</th>
+                </tr>
+                <a class="Salir" href="{{ url_for('menu') }}">Salir</a>
+            </thead>
+            <tbody>
+                {% for producto in productos %}
+                    <tr ondblclick="Edito(this)" data-url="{{ url_for('edit', id=producto.id) }}">
+<!--                <tr ondblclick="Edito('{{ url_for('edit', id=producto.id) }}')">
+                    <tr ondblclick="href={{ url_for('edit', id=producto.id) }}">    -->
+                    <td class="r01">{{ producto.codigo }}</td>
+                    <td class="r02">{{ producto.producto }}</td>
+                    <td class="r03">{{ producto.detalle }}</td>
+                    <td class="r04"><img src="{{producto['imagen']}}" alt="-" style="max-width: 50px;"></td>
+<!--                <td class="r05"><img src="{{producto['img1']}}" alt="-" style="max-width: 30px;"></td>  
+                    <td class="r06"><img src="{{producto['img2']}}" alt="-" style="max-width: 30px;"></td>
+                    <td class="r07"><img src="{{producto['img3']}}" alt="-" style="max-width: 30px;"></td>  -->
+                    <td class="r08">{{ producto.categoria }}</td>
+                    <td class="r09">{{ producto.costo }}</td>
+                    <td class="r10">{{ producto.precio1 }}</td>
+                    <td class="r11">{{ producto.precio2 }}</td>
+                    <td class="r12">{{ producto.stock }}</td>
+                     
+                    <td class="icono_1" title=" Editar "><a href="{{ url_for('edit', id=producto.id) }}"><img src='/static/img/editar.png' width='25px' height='25px'></a></td>
+                    <td class="icono_2" title=" Eliminar "><a href="#" data-id="{{ producto.id }}" onclick="confirmDeletion(event, this.getAttribute('data-id'));"><img src='/static/img/eliminar.png' width='25px' height='25px'></a>
+                        <form id="delete-form-{{ producto.id }}" action="{{ url_for('delete', id=producto.id) }}" method="POST" style="display: none;">
+                        </form>
+                    </td>
+                    <script>
+                        function confirmDeletion(event, id) {
+                            event.preventDefault();  // Evitar que el enlace se siga automáticamente
+                            const confirmation = confirm('¿Estás seguro de que deseas eliminar este producto?');
+                            if (confirmation) {
+                                // Si el usuario confirma, enviar el formulario correspondiente
+                                document.getElementById(`delete-form-${id}`).submit();
+                            }
+                        }
+                        function Edito(element) {
+                            const url = element.getAttribute('data-url');
+                            window.location.href = url;
+                        }
+                    </script>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

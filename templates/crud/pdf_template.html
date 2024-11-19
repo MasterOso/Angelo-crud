@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Productos PDF</title>
+</head>
+<body>
+    <h1>Listado de Productos</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Producto</th>
+                <th>Detalle</th>
+                <th>Imagen</th>
+                <th>Categoria</th>
+                <th>Costo</th>
+                <th>Stock</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in productos %}
+            <tr>
+                <td>{{ producto.codigo }}</td>
+                <td>{{ producto.producto }}</td>
+                <td>{{ producto.detalle }}</td>
+                
+                <!-- *** AQUI HAY QUE SOLUCIONAR EL TEMA DE LAS IMAGENES EN EL PDF PORQUE NO SALEN ***
+                <td><img src="{{ producto.imagen }}" alt="Imagen" style="max-width: 100px;"></td>   -->
+                
+                <td>{{ producto.categoria }}</td>
+                <td>{{ producto.costo }}</td>
+                <td>{{ producto.stock }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/crud/create.css">
+    <title>Crear Producto</title>
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+</head>
+
+<body>
+    <h1 class="Titulo1">NUEVO PRODUCTO</h1>
+       
+    <!--   Esto va para habilitar el mensaje de error de clave duplicada -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <div class="alert-container">
+            {% for category, message in messages %}
+            <div class="alert alert-{{ category }}" role="alert">
+                {{ message|safe }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    {% endwith %}
+
+    <div class="caja" id="formcrear">
+     
+    <form method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <br>
+        <div class="grupo-0">
+            <div class="campo-1">
+                <label for="codigo">Código:</label>
+                {{ form.codigo(class_="c1") }}
+            </div>
+
+            <div class="campo-2">
+                <label for="producto">Producto:</label>
+                {{ form.producto(class_="c2") }}
+            </div>
+        </div>
+        <div class="campo-3">
+            <label for="detalle">Detalle:</label>
+            {{ form.detalle(class_="c3") }}
+            <!--<textarea rows="3" cols="80" maxlength="180">{{ form.detalle.data if form.detalle.data else '' }}</textarea>  -->
+        </div>
+
+        <div class="grupo-1">
+            <div class="campo-4">
+                <div class="box"><label for="form_imagen">Imagen:</label></div>
+                <div class="box1">{{ form.imagen(id="form_imagen") }}</div>
+                <div class="box"><img id="p_img" src="{{ imagen }}" alt="." style="max-height: 150px;"></div>
+            </div>
+            <div class="campo-5">
+                <div class="box"><label for="form_img1">Imagen 1:</label></div>
+                <div class="box1">{{ form.img1(id="form_img1") }}</div>
+                <div class="box"><img id="p_img1" src="{{ img1 }}" alt="." style="max-height: 150px;"></div>
+            </div>
+            <div class="campo-6">
+                <div class="box"><label for="form_img2">Imagen 2:</label></div>
+                <div class="box1">{{ form.img2(id="form_img2") }}</div>
+                <div class="box"><img id="p_img2" src="{{ img2 }}" alt="." style="max-height: 150px;"></div>
+            </div>
+            <div class="campo-7">
+                <div class="box"><label for="form_img3">Imagen 3:</label></div>
+                <div class="box1">{{ form.img3(id="form_img3") }}</div>
+                <div class="box"><img id="p_img3" src="{{ img3 }}" alt="." style="max-height: 150px;"></div>
+            </div>
+        </div>
+
+        <br><br>
+        <div class="grupo-2">
+            <div class="campo-8">
+                <label for="categoria">Categoría:</label>
+                {{ form.categoria(class_="c8") }}
+            </div>
+            <div class="campo-9">
+                <label for="stock">Stock:</label>
+                {{ form.stock(class_="c9") }}
+            </div>
+            <div class="campo-10">
+                <label for="costo">Costo:</label>
+                {{ form.costo(class_="c10") }}
+            </div>
+            <div class="campo-11">
+                <label for="por1">% 1:</label>
+                {{ form.por1(class_="c11") }}
+            </div>
+            <div class="campo-12">
+                <label for="precio1">Precio 1:</label>
+                {{ form.precio1(class_="c12") }}
+            </div>
+            <div class="campo-13">
+                <label for="por2">% 2:</label>
+                {{ form.por2(class_="c13") }}
+            </div>
+            <div class="campo-14">
+                <label for="precio2">Precio 2:</label>
+                {{ form.precio2(class_="c14") }}
+            </div>
+        </div>
+        <br><br>
+        <div class="botones">
+            <button class="boton-G" type="submit" name="save">Guardar</button>
+            <a class="boton-C" href="{{ url_for('index') }}">Cancelar</a>
+        </div>
+    </form>
+    </div>
+
+    <script>
+        document.getElementById('form_imagen').onchange = function(event) {
+            const reader = new FileReader();
+            reader.onload = function(){
+                const output = document.getElementById('p_img');
+                output.src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        };
+        document.getElementById('form_img1').onchange = function(event) {
+            const reader = new FileReader();
+            reader.onload = function(){
+                const output = document.getElementById('p_img1');
+                output.src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        };
+        document.getElementById('form_img2').onchange = function(event) {
+            const reader = new FileReader();
+            reader.onload = function(){
+                const output = document.getElementById('p_img2');
+                output.src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        };
+        document.getElementById('form_img3').onchange = function(event) {
+            const reader = new FileReader();
+            reader.onload = function(){
+                const output = document.getElementById('p_img3');
+                output.src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        };
+
+    </script>
+
+</body>
+
+</html>

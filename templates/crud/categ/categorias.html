@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Productos</title>
+    <link rel="stylesheet" href="/static/css/crud/categ/categorias.css">
+	
+	<link rel="shortcut icon" href="static/images/Nivel-1/marca.jpeg">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+</head>
+<body>
+    <div style="text-align:center;">
+        <table class="TTT">
+            <td  class="titulo1">MANTENIMIENTO DE CATEGORIAS</td>
+<!--            <td style="width: 40px; text-align: left;"><img src="static/images/Nivel-1/marca-6.jpg" style="max-width: 130px;"></td> -->
+        </table>
+    </div>
+    <a class="Salir" href="{{ url_for('menu') }}">Salir</a>
+    <br>
+	<div class=tablescroll>
+        <table class="tabla2">
+            <thead class="div0">
+                <tr class="titu"><th colspan="6"><h>CATEGORIAS</h><th colspan="2" rowspan="2" ><a class="boton_A" href="{{ url_for('create_c') }}";>AGREGAR</a></th></tr>
+                <tr class="stitu">
+                    <th class="t01">Categoria</th>
+                    <th class="t02">Nombre</th>
+                    <th class="t03">Linea Superior</th>
+                    <th class="t04">Estilo</th>
+                    <th class="t05">Linea Inferior</th>
+                    <th class="t06">Estilo</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for categoria in categorias %}
+                    <tr ondblclick="Edito(this)" data-url="{{ url_for('edit_c', id=categoria.cat) }}">
+                    <td style="text-align: center;">{{ categoria.cat }}</td>
+                    <td class="r02">{{ categoria.nomcat }}</td>
+                    <td class="r03">{{ categoria.supercat }}</td>
+                    <td style="text-align: center;">{{ categoria.superest }}</td>
+                    <td class="r05">{{ categoria.subcat }}</td>
+                    <td style="text-align: center;">{{ categoria.subest }}</td>
+                     
+                    <td class="icono_1" title=" Editar "><a href="{{ url_for('edit_c', id=categoria.cat) }}"><img src='../../../static/img/editar_.png' width='25px' height='25px'></a></td>
+                    <td class="icono_2" title=" Eliminar "><a href="#" data-id="{{ categoria.cat }}" onclick="confirmDeletion(event, this.getAttribute('data-id'));"><img src='../../../static/img/eliminar.png' width='25px' height='25px'></a>
+                        <form id="delete-form-{{ categoria.cat }}" action="{{ url_for('delete_c', id=categoria.cat) }}" method="POST" style="display: none;">
+                        </form>
+                    </td>
+                    <script>
+                        function confirmDeletion(event, id) {
+                            event.preventDefault();  // Evitar que el enlace se siga automáticamente
+                            const confirmation = confirm('¿Estás seguro de que deseas eliminar este producto?');
+                            if (confirmation) {
+                                // Si el usuario confirma, enviar el formulario correspondiente
+                                document.getElementById(`delete-form-${id}`).submit();
+                            }
+                        }
+                        function Edito(element) {
+                            const url = element.getAttribute('data-url');
+                            window.location.href = url;
+                        }
+                    </script>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
