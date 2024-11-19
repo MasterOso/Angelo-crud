@@ -1,0 +1,394 @@
+body 
+{
+ 	background-image: radial-gradient(circle at 50% -20.71%, #ffb1a7 0, #9f5b4f 50%, #442822 100%);
+	background-color: rgba(255, 255, 255, 0.7); /* Blanco con 50% de opacidad */
+    background-blend-mode: lighten; /* O "overlay" para otros efectos */
+	font-family: sans-serif;
+	font-size: 14px;
+	max-height: 97vh;
+	height: 97vh;	/*	Ocupa el alto maximo disponible de la pantalla */
+    max-width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.tabla2 th {		/*	TABLA: linea de títulos 	*/
+    background: rgb(94, 10, 10);
+	color: white;
+    text-shadow: 0 2px 0 #000000;
+    border: 1px solid #cccccc;
+	/*font-size: 12px;*/
+}
+
+.tabla2 td {		/*	TABLA: Celdas 	*/
+    border: 1px solid #cccccc;
+    padding: 1px;
+	font-size: 12px;
+}
+
+.tabla2 tr:hover {	    /*  registro seleccionado  */
+	background-color: #FF9999;
+}
+
+.boton_A, .boton_C, .boton_G {	/*	Agregar, Cancelar y Guardar	*/
+	text-align: center, middle;
+	display: inline-block;
+	padding: 3px;
+	border-radius: 5px;
+	text-decoration: none;
+	border: 1px solid black;
+	cursor: pointer;
+	text-shadow: 0 0 0 #cccc99;	/* Anulo el sombreado que fijé en th */
+}
+
+.boton_A {	  /*   boton AGREGAR   */
+	font-weight: normal;
+	font-size: 14px;
+	width: 70px;
+/*	margin-left: 5px;
+	margin-right: 5px;*/
+	height: 25%;
+	background-color: #009900;
+	color: white;
+}
+
+.boton_C {
+	margin-right: 12px;
+}
+
+.icono_1, .icono_2  {
+	width: 3%;
+	cursor: pointer;
+	text-align: center;
+}
+
+h1 {
+	font-family: sans-serif;
+	margin:5px;
+	font-size: 14px;
+}
+
+#barrabuscar {
+	color:white;
+	text-align:right;
+	width:50%;
+}
+
+.contenedor_popup {
+	width: 100%;
+}
+
+.tdne {
+	background: steelblue;
+	color: white;
+	font-variant: bold;
+	text-align: left;
+}
+
+.Orden {
+	background: steelblue;
+	color: white;
+	text-align: center;
+}
+
+/********************************************************************/
+/*           AAAA        LL          TTTTTTTT        AAAA			*/
+/*          AA  AA       LL             TT          AA  AA			*/
+/*         AAAAAAAA      LL             TT         AAAAAAAA			*/
+/*         AA    AA      LLLLLL         TT         AA    AA			*/
+/********************************************************************/
+@media screen and (min-width: 100px) {
+/*
+.impre  {
+	width: 30px;
+	height: 30px;
+}
+*/
+.TTT {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.titulo1 {
+	text-align: center;
+	font-size: 14px;
+	text-shadow: 0 2px 0 #ffffff;
+	font-weight: bolder;
+	text-align: left;
+	margin-left: 10px;
+}
+
+.form-B {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5px;
+}
+
+.tb {
+	display: none;
+	font-size: 12px;
+	margin-right: 25px;
+	font-style: italic;
+}
+
+.B1, .B2, .B3 {
+	border-radius: 5px;
+	font-size: 10px;
+	font-variant: bold;
+	width: 30%;
+	height: 15px;
+	padding-left: 3px;
+	font-style: italic;
+}
+
+.B1 {
+	width: 40%;
+}
+
+.B2 {
+	margin-left: 0px;
+	width: 25%;
+}
+
+.B3 {
+	margin-left: 0px;
+	width: 20%;
+}
+
+.b123, ._bB {
+	display: inline-block;
+}
+
+.bB {
+	margin-top: 3px;
+	border-radius: 5px;
+	font-size: 10px;
+	text-align: center;
+	background-color: yellow; 
+	width: 100px;
+	height: 21px;
+	font-weight: bold;
+}
+
+.tablescroll {
+	border: 1px solid black;
+	border-radius: 3px;
+	margin: auto;
+	margin-top: -5px;
+	text-align: center;
+	height: 80%;
+	width: 100%;
+	overflow: auto;
+	}
+
+.div0 {
+	position: sticky;
+	top: 0;
+}
+
+.tabla2  {
+	text-align:center;
+    width: 300%;
+    border-collapse: separate;
+	border-spacing: 0;
+    border: 1px solid black;
+    background: white;
+	height: auto;
+	font-size: 12px;
+}
+
+.tabla2 td {
+	font-size: 11px;
+}
+
+
+.t01, .t02, .t03 {
+	font-size: 10px;
+	width: auto;
+}
+
+.t04, .t05, .t06, .t07, .t08, .t09, .t10, .t11, .t12 {
+	font-size: 9px;
+	width: auto;
+}
+
+.boton_A {
+	font-size: 12px;
+	width: 50px;
+	background-color: #35ff5a;
+	color: black;
+
+	border-radius: 5px;
+	font-size: 10px;
+	text-align: center;
+	font-weight: bold;
+
+}
+
+.tx1 {
+	width: 2%;
+}
+.tx2 {
+	width: 3%;
+}
+.tx3 {
+	width: 30%;
+}
+
+.boton_C, .boton_G {
+	font-size: 12px;
+	width: 90px;
+	background-color: #FABD44;
+	color: black;
+}
+
+/*   CAMPOS DE AGREGAR / EDICION   */
+.C0 {
+	width: 30px;
+	height: 25px;
+}
+.C1 {
+	width: 250px;
+	height: 25px;
+}
+.Salir {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	border:solid 2px #000000;
+	border-radius: 5px;
+	padding: 1px;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: #630157;
+	font-size: 12px;
+	text-decoration: none;
+	color: white;
+}
+} 
+
+/************************************************************************/
+/*       AAAA        NNN  NN      CCCCCCC      HH   HH        AAAA		*/
+/*      AA  AA       NNNN NN      CC           HH   HH       AA  AA		*/
+/*     AAAAAAAA      NN NNNN      CC           HHHHHHH      AAAAAAAA	*/
+/*     AA    AA      NN  NNN      CCCCCCC      HH   HH      AA    AA	*/
+/************************************************************************/
+@media screen and (min-width: 992px) {
+
+.TTT {
+	width: 500px;
+	margin: 0 auto;
+}
+
+.titulo1 {
+	width: 300px;
+	text-align: center;
+	font-size: 22px;
+	text-shadow: 0 2px 0 #ffffff;
+	font-weight: bolder ;
+}
+
+.boton_A {
+	font-size: 12px;
+	width: 70px;
+	height: 15px;
+	background-color: #69fb84;
+	color: black;
+	padding: 6px 12px;
+	border-radius: 5px;
+	font-size: 12px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.tabla2  {
+    width: 100%;
+	height: auto;
+	border-collapse: separate;
+	border-spacing: 0;
+    border: 1px solid black;
+    background: white;
+	user-select: none;
+}
+
+.titu {
+	font-size: 16px;
+}
+
+.tabla2 td {
+	font-size: 14px;
+	text-align: left;
+	padding-left: 3px;
+}
+
+.tablescroll {
+	border: 1px solid black;
+	border-radius: 3px;
+	margin-top: 0px;
+	text-align: center;	
+	height: 85%;
+	width: 99.50%;
+	overflow: auto;
+}
+
+.div0 {
+	max-height: 66%;
+	overflow-y: auto;	
+	position: sticky;
+	top: 0;
+}
+
+.t01, .t02, .t03, .t04, .t05, .t06 {
+	font-size: 14px;
+	width: auto;
+}
+
+.c0 {
+	width: 140px;
+	height: 25px;
+}
+.c1 {
+	width: 350px;
+	height: 25px;
+}
+.c2 {
+	width: 550px;
+	height: 25px;
+}
+
+.foto {
+	width: 30px;
+	height: 25px;	
+}
+.subir {
+	width: 30px;
+	height: 25px;	
+}
+
+.icono_1, .icono_2  {
+	width: 3%;
+	cursor: pointer;
+}
+
+.icono_1 a, .icono_2 a {
+	display: flex;
+	justify-content: center;
+}
+
+.Salir {
+	position: absolute;
+	right: 50px;
+	top: 10px;
+	border:solid 2px #07781c;
+	border-radius: 5px;
+	padding: 5px;
+	padding-left: 30px;
+	padding-right: 30px;
+	background-color: #35ff5a;
+	font-size: 16px;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+}

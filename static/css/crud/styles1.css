@@ -1,0 +1,23 @@
+header .banner {
+    background-color: #f8d7da;
+    padding: 20px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+}
+
+.carousel-item {
+    display: flex;
+}
+
+.card {
+    margin: 10px;
+}
+
+#carrito-lista {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#total {
+    font-weight: bold;
+}

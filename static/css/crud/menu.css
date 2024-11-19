@@ -1,0 +1,124 @@
+body 
+{
+    background-image: radial-gradient(circle at 50% -20.71%, #ffb1a7 0, #9f5b4f 50%, #731a06 100%);
+    background-blend-mode: lighten; /* O "overlay" para otros efectos */
+	font-family: sans-serif;
+	font-size: 14px;
+	max-height: 97vh;
+	height: 97vh;	/*	Ocupa el alto maximo disponible de la pantalla */
+    max-width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+
+/********************************************************************/
+/*           AAAA        LL          TTTTTTTT        AAAA			*/
+/*          AA  AA       LL             TT          AA  AA			*/
+/*         AAAAAAAA      LL             TT         AAAAAAAA			*/
+/*         AA    AA      LLLLLL         TT         AA    AA			*/
+/********************************************************************/
+@media screen and (min-width: 100px) {
+
+.titulo {
+    text-align: center;
+    font-size: 25px;
+}
+
+.menu1 {
+    position: relative;
+    border: solid 4px rgba(59, 2, 2, 0.7);
+    background-color: brown;
+    top: 35px;
+    display: block;
+    width: 95%;
+    height: 320px;
+    text-align: center;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.opcion1, .opcion2, .opcion3 {
+    font-size: 22px;
+    border:rgba(17, 1, 196, 0.7);
+    background-color: bisque;
+    width: 250px;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 35px;
+    vertical-align: middle;
+    line-height: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.opcion1 a, .opcion2 a, .opcion3 a {
+    text-decoration: none;
+    color:black;
+    width: 250px;
+}
+
+.menu1 a {
+    width: 250px; 
+    text-decoration: none;
+}
+
+}
+
+/************************************************************************/
+/*       AAAA        NNN  NN      CCCCCCC      HH   HH        AAAA		*/
+/*      AA  AA       NNNN NN      CC           HH   HH       AA  AA		*/
+/*     AAAAAAAA      NN NNNN      CC           HHHHHHH      AAAAAAAA	*/
+/*     AA    AA      NN  NNN      CCCCCCC      HH   HH      AA    AA	*/
+/************************************************************************/
+@media screen and (min-width: 992px) {
+
+.titulo {
+    text-align: center;
+    font-size: 25px;
+}
+
+.menu1 {
+    position: relative;
+    border: solid 4px rgba(59, 2, 2, 0.7);
+    background-color: brown;
+    top: 70px;
+    display: block;
+    width: 400px;
+    height: 320px;
+    text-align: center;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.opcion1, .opcion2, .opcion3 {
+    font-size: 22px;
+    border:rgba(17, 1, 196, 0.7);
+    background-color: bisque;
+    width: 250px;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 35px;
+    vertical-align: middle;
+    line-height: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.opcion1 a, .opcion2 a, .opcion3 a {
+    text-decoration: none;
+    color:black;
+    width: 250px;
+}
+
+.menu1 a {
+    width: 250px; 
+    text-decoration: none;
+}
+
+}
+

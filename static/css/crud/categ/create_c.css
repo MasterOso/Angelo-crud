@@ -1,0 +1,302 @@
+body {
+/*	background-image: radial-gradient(circle at 50% -20.71%, #ffb1a7 0, #9f5b4f 50%, #442822 100%);*/
+	background-image: url("../../static/images/Nivel-1/marca.jpeg");
+	background-color: rgba(255, 255, 255, 0.7); /* Blanco con 30% de opacidad */
+	background-blend-mode: lighten; /* O "overlay" para otros efectos */
+
+	font-family: sans-serif;
+	max-height: 97vh;
+	height: 97vh;	/*	Ocupa el alto maximo disponible de la pantalla */
+    max-width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+
+/*       AAAAA     LLL        TTTTTTTTTT     AAAAA			*/
+/*      AAA AAA    LLL        TTTTTTTTTT    AAA AAA			*/
+/*     AAA   AAA   LLL            TT       AAA   AAA		*/
+/*    AAAAAAAAAAA  LLL            TT      AAAAAAAAAAA		*/
+/*    AAAAAAAAAAA  LLL            TT      AAAAAAAAAAA		*/
+/*    AAA     AAA  LLLLLLLLL      TT      AAA     AAA		*/
+/*    AAA     AAA  LLLLLLLLL      TT      AAA     AAA		*/
+/**********************************************     Pantalla  A L T A     ******************************************** */
+@media screen and (min-width: 100px) {
+
+/*----------------------------------------------------------*/
+
+.Titulo1 {
+	text-align: center;
+	font-size: 20px;
+	margin-top: 0;
+} 
+
+.caja {
+	display: flex;
+    justify-content: center; /* Centra horizontalmente */
+	height: auto;
+	width: 99%;
+	position: absolute;
+	background: rgba( 94, 10, 10, 0.8);
+    transform: translate(-5.5%, 2%);	/* ubica izquierda - Arriba  */
+	border-radius: 10px;
+	margin-left: 12px;
+	margin-top: 8%;
+}
+
+label {
+	color: rgb(205, 191, 37);
+	font-size: 18px;
+}
+
+.campo-1, .campo-2, .campo-3,
+.campo-4, .campo-5, .campo-6 {
+	vertical-align: middle;
+}
+
+.campo-1 label {
+	margin-top: 25px;
+	display: inline-block;
+	margin-right: 1px;
+	vertical-align: top;
+	width: 100px;
+	text-align: right;
+}
+
+.campo-2 label,
+.campo-3 label,
+.campo-4 label,
+.campo-5 label,
+.campo-6 label {
+	margin-top: 45px;
+	display: inline-block;
+	margin-right: 1px;
+	vertical-align: top;
+	width: 100px;
+	text-align: right;
+}
+
+.c1 {
+	position: relative;
+	top: 24px;
+	left: 5px;
+	width: 40px;
+    height: 19px;
+	border-radius: 5px;
+}
+    
+.c2 { 
+	position: relative;
+	top: 44px;
+	left: 5px;
+	width: 200px; 
+    height: 19px;
+	border-radius: 5px;
+}    
+
+.c3 { 
+	position: relative;
+	top: 44px;
+	left: 5px;
+	width: 200px; 
+    height: 70px;
+	border-radius: 5px;
+}
+.c4 { 
+	position: relative;
+	top: 44px;
+	left: 5px;
+	width: 30px; 
+    height: 20px;
+	border-radius: 5px;
+}
+.c5 { 
+	position: relative;
+	top: 44px;
+	left: 5px;
+	width: 200px; 
+    height: 70px;
+	border-radius: 5px;
+}
+.c6 { 
+	position: relative;
+	top: 44px;
+	left: 5px;
+	width: 30px; 
+    height: 20px;
+	border-radius: 5px;
+}
+
+
+.boton-G, .boton-C  {   /*   botones */
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	width: 35%;
+	display: inline-block;
+	background-color: #ffee00;
+	padding: 3px;
+	border-radius: 5px;
+	text-decoration: none; 	/* para que no salga subrayado el link */
+	color: #660099;
+	border: 1px solid black;
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+
+.boton-G  {
+	margin-left: 25px;
+}
+
+.boton-C  {
+	margin-left: 35px;
+}
+
+ 
+} 
+/*_________________________________________________________________________*/
+/*                                                                         */
+/*               aaa     nnn    nn  ccccccc  hh    hh     aaa              */
+/*              aa aa    nn n   nn  cc       hh    hh    aa aa             */
+/*             aa   aa   nn  n  nn  cc       hhhhhhhh   aaaaaaa            */
+/*            aaaaaaaaa  nn   n nn  cc       hh    hh  aa     aa           */
+/*            aa     aa  nn    nnn  ccccccc  hh    hh  aa     aa           */
+/*_________________________________________________________________________*/
+@media screen and (min-width: 992px) {
+
+.Titulo1 {
+	margin-top: 10px;
+	text-align: center;
+	font-size: 22px;
+} 
+
+label {
+	color: rgb(205, 191, 37);
+	font-size: 18px;
+}
+
+.caja {
+	display: flex;
+	justify-content: center; /* Centra horizontalmente */
+	height: 87%;
+	width: 99%;
+	position: absolute;
+	background: rgba( 94, 10, 10, 0.8);
+	transform: translate(-1%, 4%);	/* ubica izquierda - Arriba  */
+	border-radius: 10px;
+	margin-left: 12.5px;
+	margin-top: 3%;
+}
+
+.campo-1, .campo-2, .campo-3,
+.campo-4, .campo-5, .campo-6 {
+	vertical-align: middle;
+	height: auto;
+}
+
+.campo-1 label {
+	margin-top: 25px;
+	display: inline-block;
+	margin-right: 1px;
+	vertical-align: top;
+	width: 100px;
+	text-align: right;
+}
+
+.campo-2 label,
+.campo-3 label,
+.campo-4 label,
+.campo-5 label,
+.campo-6 label {
+	margin-top: 25px;
+	display: inline-block;
+	margin-right: 1px;
+	vertical-align: top;
+	width: 100px;
+	text-align: right;
+}
+
+.c1 {
+	position: relative;
+	top: 24px;
+	left: 5px;
+	width: 40px;
+	height: 19px;
+	border-radius: 5px;
+}
+	
+.c2 { 
+	position: relative;
+	top: 24px;
+	left: 5px;
+	width: 200px; 
+	height: 19px;
+	border-radius: 5px;
+}    
+
+.c3 { 
+	position: relative;
+	top: 24px;
+	left: 5px;
+	width: 350px; 
+	height: 70px;
+	border-radius: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.c4 { 
+	position: relative;
+	top: 24px;
+	left: 5px;
+	width: 30px; 
+	height: 20px;
+	border-radius: 5px;
+}
+.c5 { 
+	position: relative;
+	top: 24px;
+	left: 5px;
+	width: 350px; 
+	height: 70px;
+	border-radius: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.c6 { 
+	position: relative;
+	top: 24px;
+	left: 5px;
+	width: 30px; 
+	height: 20px;
+	border-radius: 5px;
+}
+
+.botones {	
+	width: 100%;
+	text-align: center;
+	display: inline-block;
+}
+
+.boton-G, .boton-C  {   /*   botones */
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	width: 35%;
+	display: inline-block;
+	background-color: #ffee00;
+	padding: 3px;
+	border-radius: 5px;
+	text-decoration: none; 	/* para que no salga subrayado el link */
+	color: #660099;
+	border: 1px solid black;
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+
+.boton-G  {
+	margin-left: 50px;
+}
+
+.boton-C  {
+	margin-left: 35px;
+}
+
+}
