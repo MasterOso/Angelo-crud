@@ -11,7 +11,7 @@ from flask_login import LoginManager, UserMixin, login_user, login_required, log
 from PIL import Image
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import relationship
-from app import app
+#from app import app
 
 db = SQLAlchemy()
 
