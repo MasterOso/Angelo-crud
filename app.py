@@ -39,6 +39,10 @@ db_config = {
     'database': 'proyecto_1_nsib',
     'port': '5432'
 
+    #'user': 'root',         
+    #'password': '',
+    #'host': 'localhost',          
+    #'database': 'ventas'
 }
 
 class Producto(db.Model):
