@@ -13,6 +13,9 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import relationship
 #from app import app
 
+import pymysql
+pymysql.install_as_MySQLdb()
+
 db = SQLAlchemy()
 
 app = Flask(__name__)
@@ -21,7 +24,8 @@ app = Flask(__name__)
 app.config['SESSION_PERMANENT'] = True  # True, La sesion dura lo indicado. False, hasta que cierro el navegador
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=10)  # Ajusta el tiempo de vida
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/ventas'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@localhost/ventas'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://masteroso_usuario:123456@localhost:3306/masteroso_ventas'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
@@ -33,16 +37,16 @@ app.config['MAX_IMAGE_SIZE'] = (800, 800)
 
 # Configuración de la base de datos
 db_config = {
-    'user': 'proyecto_1_nsib_user',         
-    'password': '7O1vhJmfF62orxepktldqjmzt2s2jLOL',
-    'host': 'dpg-csugbpjtq21c73a0u980-a',          
-    'database': 'proyecto_1_nsib',
-    'port': '5432'
+    #'user': 'masteroso_usuario',         
+    #'password': '123456',
+    #'host': 'localhost:3306',          
+    #'database': 'masteroso_ventas',
+    #'port': '5432'
 
-    #'user': 'root',         
-    #'password': '',
-    #'host': 'localhost',          
-    #'database': 'ventas'
+    'user': 'root',         
+    'password': '',
+    'host': 'localhost',          
+    'database': 'ventas'
 }
 
 class Producto(db.Model):
